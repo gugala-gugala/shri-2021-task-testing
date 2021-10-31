@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
-echo $(curl "$HOST"'/v2/boards/' \
-  --header 'Authorization: OAuth '"$YA_TOKEN" \
-  --header 'X-Org-ID: '"$CLIENT_ID" \
-)
-
 export CURRENT_TAG=$(git tag | tail -1 | head -n1)
 PREV_TAG=$(git tag | tail -2 | head -n1)
 export CURRENT_TAG_AUTHOR=$(git show "$CURRENT_TAG" --pretty="format:%an" --no-patch -1)
