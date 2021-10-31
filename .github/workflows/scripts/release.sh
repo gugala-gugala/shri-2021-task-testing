@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-echo $(curl -o /dev/null -s -w "%{http_code}\n" "$HOST"'/v2/boards/' \
+echo $(curl "$HOST"'/v2/boards/' \
   --header 'Authorization: OAuth '"$YA_TOKEN" \
   --header 'X-Org-ID: '"$CLIENT_ID" \
 )
