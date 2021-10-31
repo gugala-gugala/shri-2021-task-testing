@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 export CURRENT_TAG=$(git tag | tail -1 | head -n1)
+echo '###' $CURRENT_TAG
 PREV_TAG=$(git tag | tail -2 | head -n1)
+echo '###' $PREV_TAG
 export CURRENT_TAG_AUTHOR=$(git show "$CURRENT_TAG" --pretty="format:%an" --no-patch -1)
 export CURRENT_TAG_DATE=$(git show "$CURRENT_TAG" --pretty="format:%ar" --no-patch -1)
 CHANGELOG=$(git log "$PREV_TAG" --pretty=format:"%h - %s (%an, %ar)\n" | tr -s "\n" " ")
 
 export QUEUE_NAME="TMP"
 export UNIQUE_VALUE="test"
-
-echo '###' $CURRENT_TAG $CURRENT_TAG_AUTHOR $CURRENT_TAG_DATE
 
 export REQUEST_BODY='{
   "queue": "'$QUEUE_NAME'",
