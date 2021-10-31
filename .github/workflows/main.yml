@@ -33,10 +33,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
           YA_TOKEN: ${{ secrets.YA_TOKEN }}
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
-          TEST_VAL: 'TEST_VAL'
+          HOST: 'https://api.tracker.yandex.net'
         run: |
           sh ./.github/workflows/scripts/release.sh
-            echo $CLIENT_ID TEST_VAL=$TEST_VAL
+            echo $CLIENT_ID HOST=$HOST
             echo 'Thats all folks'
 
       # Runs a single command using the runners shell
