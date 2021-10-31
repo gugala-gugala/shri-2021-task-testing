@@ -27,7 +27,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - name: Create Release
+      - shell: bash
         id: create_release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
@@ -35,7 +35,7 @@ jobs:
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
         run: |
           sh ./.github/workflows/scripts/release.sh
-            echo
+            echo $CLIENT_ID
             echo 'Thats all folks'
 
       # Runs a single command using the runners shell
