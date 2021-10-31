@@ -8,6 +8,8 @@ CHANGELOG=$(git log "$PREV_TAG" --pretty=format:"%h - %s (%an, %ar)\n" | tr -s "
 export QUEUE_NAME="TMP"
 export UNIQUE_VALUE="test"
 
+echo '###' $CURRENT_TAG $CURRENT_TAG_AUTHOR $CURRENT_TAG_DATE
+
 export REQUEST_BODY='{
   "queue": "'$QUEUE_NAME'",
   "summary": "'"$CURRENT_TAG"'| Author: '"$CURRENT_TAG_AUTHOR"' | released '"$CURRENT_TAG_DATE"'",
