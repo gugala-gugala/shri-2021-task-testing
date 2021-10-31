@@ -41,6 +41,8 @@ jobs:
             - Second Change
           draft: false
           prerelease: false
+        run: |
+          bash ./.github/workflows/scripts/release.sh
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
