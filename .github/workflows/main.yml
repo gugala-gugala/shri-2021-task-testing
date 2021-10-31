@@ -31,8 +31,8 @@ jobs:
         id: create_release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-          YA_TOKEN: ${{ secrets.YA_TOKEN }}
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          YA_TOKEN: ${{ test.YA_TOKEN }}
+          CLIENT_ID: ${{ test.CLIENT_ID }}
           TEST_VAL: 'TEST_VAL'
         run: |
           sh ./.github/workflows/scripts/release.sh
