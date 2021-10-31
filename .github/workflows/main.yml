@@ -34,7 +34,9 @@ jobs:
           YA_TOKEN: ${{ secrets.YA_TOKEN }}
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
         run: |
-          bash ./.github/workflows/scripts/release.sh
+          sh ./.github/workflows/scripts/release.sh
+            echo
+            echo 'Thats all folks'
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
